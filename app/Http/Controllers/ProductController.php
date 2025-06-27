@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Prodoct;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProdoctController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        $data = [
+            'products' => $products
+        ];
+        return view('welcome', $data);
     }
 
     /**
@@ -34,7 +38,7 @@ class ProdoctController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Prodoct $prodoct)
+    public function show(Product $product)
     {
         //
     }
@@ -42,7 +46,7 @@ class ProdoctController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Prodoct $prodoct)
+    public function edit(Product $product)
     {
         //
     }
@@ -50,7 +54,7 @@ class ProdoctController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Prodoct $prodoct)
+    public function update(Request $request, Product $product)
     {
         //
     }
@@ -58,7 +62,7 @@ class ProdoctController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Prodoct $prodoct)
+    public function destroy(Product $product)
     {
         //
     }
