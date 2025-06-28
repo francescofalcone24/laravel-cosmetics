@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-	<div style="width: 50%" class="mx-auto">
+	<div style="width: 40%" class="mx-auto">
 
 		<div class="card mb-3">
 			@if (Str::startsWith($product['img'], 'http'))
@@ -12,9 +12,9 @@
 
 			<div class="card-body">
 
-				<h5 class="card-title">Product: {{ $product['brand'] }}</h5>
+				<h5 class="card-title">Brand: {{ $product['brand'] }}</h5>
 				<p class="card-text">Model: {{ $product['model'] }}</p>
-				<p class="card-text">Price: €{{ $product['price'] }}</p>
+				<p class="card-text">Price: €{{ $product['price'] }} /{{ $product['size_ml'] }}ml</p>
 				<p class="card-text"><small class="text-body-secondary">{{ $product['type'] }}</small></p>
 				<a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-primary"> <i
 						class="fa-solid fa-pencil"></i></a>
