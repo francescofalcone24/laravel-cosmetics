@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-	<div style="width: 40%" class="mx-auto">
+	<div style="width: 30%" class="mx-auto mt-2">
 
 		<div class="card mb-3">
 			@if (Str::startsWith($product['img'], 'http'))
