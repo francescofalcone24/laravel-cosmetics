@@ -52,6 +52,7 @@
 			<th>BRAND</th>
 			<th>MODEL</th>
 			<th class="text-center">TYPE</th>
+			<th class="text-center">SIZE/ml</th>
 			<th class="action-width text-end">ACTION</th>
 		</thead>
 		<tbody>
@@ -68,7 +69,9 @@
 					<td> {{ $item->brand }} </td>
 					<td> {{ $item->model }} </td>
 
-					<td class="sponsor text-center">{{ $item->type }}</td>
+					<td class=" text-center">{{ $item->type }}</td>
+					<td class=" text-center">{{ $item->size_ml }}</td>
+
 
 					<td class="action text-end">
 						<a class="btn btn-warning" href="{{ route('admin.products.edit', $item->id) }}"><i class="fa fa-edit"
