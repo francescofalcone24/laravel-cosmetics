@@ -5,9 +5,9 @@
 
 		<div class="row px-4">
 			@foreach ($products as $product)
-				<div class="col-md-3">
-					<div class="card m-2 " style="width: 100%;">
-						<img src="{{ asset($product->img) }}" class="card-img-top object-fit-cover" alt="">
+				<div class="col-md-3 my-2">
+					<div class="card m-2 h-100">
+						<img src="{{ asset($product->img) }}" class="card-img-top object-fit-cover" style="max-height: 300px" alt="">
 						<div class="card-body">
 							<h5 class="card-title">{{ $product->brand }} - {{ $product->model }}</h5>
 							<p class="card-text">{{ $product->type }}</p>
