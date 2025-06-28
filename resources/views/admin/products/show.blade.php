@@ -1,7 +1,25 @@
 @extends('layouts.admin')
 
 @section('content')
-	<div class="container-fluid mt-4">
-		<h1>queste è show</h1>
-	</div>
-@endsection
+	<div style="width: 50%" class="mx-auto">
+
+		<div class="card mb-3">
+			@if (Str::startsWith($product['img'], 'http'))
+				<img src="{{ $product->img }}" class="card-img-top" alt="...">
+			@else
+				<img src="{{ asset('storage/' . $product->img) }}" class="card-img-top" alt="...">
+			@endif
+
+			<div class="card-body">
+
+				<h5 class="card-title">Product: {{ $product['brand'] }}</h5>
+				<p class="card-text">Model: {{ $product['model'] }}</p>
+				<p class="card-text">Price: €{{ $product['price'] }}</p>
+				<p class="card-text"><small class="text-body-secondary">{{ $product['type'] }}</small></p>
+				<a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-primary"> <i
+						class="fa-solid fa-pencil"></i></a>
+			</div>
+
+		</div>
+		<a href="{{ route('admin.products.index') }}">back to the list</a>
+	@endsection
