@@ -77,8 +77,8 @@
 					</div>
 
 					<div class="my-4">
-						<div class="d-flex" style="width: 100px">
-							<span>Current IMG:</span>
+						<div class="d-flex" style="width:150px">
+							<p class="text-nowrap">Current IMG:</p>
 							@if (Str::startsWith($product->img, 'http'))
 								<img class="w-100 ms-3 mb-3" src="{{ $product->img }}" alt="">
 							@else
@@ -88,6 +88,9 @@
 						<label for="product_img" class="form-label mb-2">Update IMG:</label>
 						<input type="file" class="form-control" name="img" id="product_img" value="{{ $product->img }}"
 							accept=“.png,.jpg,.jpeg,.webp,image/png” />
+						<small class="text-muted">
+							If there is already a current image, leave it blank to keep it.
+						</small>
 					</div>
 
 
