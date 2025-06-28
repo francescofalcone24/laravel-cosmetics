@@ -34,21 +34,28 @@
 
 							<li class="nav-item">
 								<a class="nav-link text-white" href="/">
-									<i class="fa-solid fa-home-alt fa-lg fa-fw"></i> Home
+									<i class="fa-solid fa-home-alt fa-lg fa-fw"></i> Homepage
 								</a>
 							</li>
 
 							<li class="nav-item">
 								<a class="nav-link text-white {{ Route::currentRouteName() == 'admin.products.index' ? 'bg-secondary' : '' }}"
 									href="{{ route('admin.products.index') }}">
-									<i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Products
+									<i class="fa-solid fa-tachometer-alt fa-lg fa-fw pe-2"></i> Products list
+								</a>
+							</li>
+
+							<li class="nav-item">
+								<a class=" nav-link text-white {{ Route::currentRouteName() == 'admin.products.create' ? 'bg-secondary' : '' }}"
+									href="{{ route('admin.products.create') }}">
+									<i class="fa-solid fa-plus fa-lg fa-fw "></i> Create Product
 								</a>
 							</li>
 
 							<li class="nav-item">
 								<a class="nav-link text-white" href="{{ route('logout') }}"
 									onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-									<i class="fa-solid fa-sign-out-alt fa-lg fa-fw"></i> {{ __('Logout') }}
+									<i class="fa-solid fa-sign-out-alt fa-lg fa-fw ps-1 "></i> {{ __('Logout') }}
 								</a>
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
 									@csrf

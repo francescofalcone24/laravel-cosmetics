@@ -16,7 +16,7 @@ class ProductController extends Controller
         $data = [
             'products' => $products
         ];
-        return view('welcome', $data);
+        return view('admin.products.index', $data);
     }
 
     /**
