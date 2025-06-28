@@ -4,6 +4,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController; //<---- Import del controller precedentemente creato!
 
+use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,12 @@ use App\Http\Controllers\Admin\DashboardController; //<---- Import del controlle
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $products = Product::all();
+
+    $data = [
+        'products' => $products
+    ];
+    return view('welcome', $data);
 });
 
 Route::middleware(['auth'])
@@ -28,8 +34,6 @@ Route::middleware(['auth'])
         // - il percorso "/" diventa "admin/"
         // - il nome della rotta ->name("dashboard") diventa ->name("admin.dashboard")
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-
-        Route::get('/', [ProductController::class]);
     });
 
 require __DIR__ . '/auth.php';
