@@ -97,7 +97,7 @@
 											Are you sure you want to delete
 											<br>
 											<strong>
-												{{ $item->brand }}{{ $item->model }}?
+												{{ $item->brand }}-{{ $item->model }}?
 											</strong>
 										</span>
 										<br>
