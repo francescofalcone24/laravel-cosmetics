@@ -17,7 +17,7 @@ use App\Models\Product;
 */
 
 Route::get('/', function () {
-    $products = Product::all();
+    $products = Product::paginate(8);
 
     $data = [
         'products' => $products

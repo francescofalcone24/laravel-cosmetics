@@ -31,7 +31,9 @@
 				</div>
 			@endforeach
 		</div>
-
+		<div class="row my-4 text-center">
+			{{ $products->links() }}
+		</div>
 
 	</div>
 	{{-- footer --}}
