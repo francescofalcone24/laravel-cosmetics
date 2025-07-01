@@ -15,9 +15,12 @@
 				<tr>
 					<td>
 						@if (Str::startsWith($item->img, 'http'))
-							<img class="rounded p-2" style="height: 2rem" src="{{ $item['img'] }}">
+							<img class="rounded p-2" style="height: 4rem; transition:transform 0.3s ease" src="{{ $item['img'] }}"
+								onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
 						@else
-							<img class="rounded p-2" style="height: 4rem" src="{{ asset('/storage/' . $item->img) }}">
+							<img class="rounded p-2" style="height: 4rem; transition:transform 0.3s ease"
+								src="{{ asset('/storage/' . $item->img) }}" onmouseover="this.style.transform='scale(1.2)'"
+								onmouseout="this.style.transform='scale(1)'">
 						@endif
 					</td>
 

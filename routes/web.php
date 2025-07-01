@@ -23,7 +23,7 @@ Route::get('/', function () {
         'products' => $products
     ];
     return view('welcome', $data);
-});
+})->name('home');
 
 Route::middleware(['auth'])
     ->prefix('admin') //definisce il prefisso "admin/" per le rotte di questo gruppo

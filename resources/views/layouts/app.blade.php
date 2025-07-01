@@ -10,6 +10,10 @@
 
 	<title>{{ config('app.name', 'Laravel') }}</title>
 
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+		integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<!-- Fonts -->
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -25,7 +29,7 @@
 
 
 		<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-0" height="">
-			<div class="container" height="">
+			<div class="container d-flex justify-content-between" height="">
 				{{-- logo --}}
 				<a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
 					<div class="logo">
@@ -39,18 +43,21 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="collapse navbar-collapse " id="navbarSupportedContent">
 					<!-- Left Side Of Navbar -->
-					@if (Route::currentRouteName() !== '/home')
-						<ul class="navbar-nav me-auto">
-							<li class="nav-item">
-								<a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
-							</li>
-						</ul>
-					@endif
+					<div class="text-end w-100">
+						@if (Route::currentRouteName() != 'home')
+							<ul class="navbar-nav me-auto">
+								<li class="nav-item">
+									<a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+								</li>
+							</ul>
+						@endif
+					</div>
+
 
 					<!-- Right Side Of Navbar -->
-					<ul class="navbar-nav ml-auto">
+					<ul class="navbar-nav ml-auto ">
 						<!-- Authentication Links -->
 						@guest
 							<li class="nav-item">
@@ -90,6 +97,8 @@
 		<main class="">
 			@yield('content')
 		</main>
+
+
 	</div>
 </body>
 
