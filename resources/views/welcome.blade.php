@@ -38,7 +38,7 @@
 	</div>
 	{{-- footer --}}
 	<footer>
-		<div class="w-100 m-0 border-top py-3 mySalmon-bg text-light">
+		<div class="w-100 m-0 border-top py-4 mySalmon-bg text-light">
 			<div class="container d-flex justify-content-between">
 				<div>
 					<p class="mb-3 fs-6 fw-bold">LINKS</p>
